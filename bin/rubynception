@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
 
 require File.expand_path(File.dirname(__FILE__) + '/../lib/rubynception')
-Rubynception::Compiler.new(ARGV[0])
+source = File.read(ARGV[0])
+Rubynception::Compiler.new(source)
