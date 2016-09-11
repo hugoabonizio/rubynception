@@ -1,12 +1,12 @@
 module Rubynception
   class Machine
-    def initialize(bytecode)
+    def initialize(bytecode, io)
       @bytecode = bytecode
       @stack = []
       @local = {}
       @code = ''
       @methods = {
-        puts: lambda { |x| puts x }
+        puts: lambda { |x| io.puts x }
       }
       @pc = 0
       @labels = {}

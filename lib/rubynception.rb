@@ -6,16 +6,15 @@ require File.expand_path(File.dirname(__FILE__) + '/rubynception/machine')
 
 module Rubynception
   class Compiler
-    def initialize(source)
+    def initialize(source, debug = false, stdout = STDOUT)
       magic, major_version, minor_version, format_type, misc,
       name, filename, filepath, line_no, type, locals, args,
       catch_table, bytecode = RubyVM::InstructionSequence.compile(source).to_a
 
-      pp bytecode
+      pp bytecode if debug
+      puts '=============' if debug
 
-      puts '============='
-
-      Rubynception::Machine.new(bytecode).run
+      Rubynception::Machine.new(bytecode, stdout).run
     end
   end
 end
