@@ -51,7 +51,7 @@ module Rubynception
               when :branchif
               branchif code[1]
               when :leave
-              exit
+              return
             end
             when Symbol
             @labels[code] = @pc
