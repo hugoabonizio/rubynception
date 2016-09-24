@@ -30,7 +30,7 @@ module Rubynception
               setlocal code[1]
               when :getlocal_OP__WC__0
               getlocal code[1]
-              when :opt_send_simple
+              when :opt_send_simple, :opt_send_without_block
               opt_send_simple code[1]
               when :opt_plus
               opt_plus code[1]
