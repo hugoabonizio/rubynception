@@ -20,4 +20,8 @@ describe Rubynception do
   it 'performs while statements' do
     expect(load_asset('while')).to eq("10001\n0\n")
   end
+
+  it 'performs fibonacci' do
+    expect(load_asset('fib')).to eq("1\n1\n2\n3\n5\n8\n13\n")
+  end
 end
